@@ -19,7 +19,7 @@ public class Chapter3 {
         fs.close();
     }
     catch (Exception e) {
-      e.printstackTrace();
+      e.printStackTrace();
     }
   }
 }
