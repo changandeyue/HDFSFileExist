@@ -8,7 +8,7 @@ public class Chapter3 {
       String filename = "test";
       Configuration conf = new Configuration();
       conf.set("fs.defaultFS","hdfs://localhost:9000");
-      conf.set("fs.hdfs.impl","org.apache.hadoop.hdfs.Dist ributedFileSystem");
+      conf.set("fs.hdfs.impl","org.apache.hadoop.hdfs.DistributedFileSystem");
       FileSystem fs = FileSystem.get(conf);
         if(fs.exists(new Path(filename))) {
           System.out.println("文件存在");
