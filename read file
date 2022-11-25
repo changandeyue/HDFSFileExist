@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.InputstreamReader;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.FSDataInputstream;
+
+public class Chapter3 {
+  public static void main(String[]args) {
+    try {
+      Configuration conf = new Configuration();
+      conf.set("fs.defaultFs","hdfs://localhost:9000");
+      conf.set("fs.hdfs.impl","org.apache.hadoop.hdfs.Dist ributedFileSystem");
+      FileSystem fs = FileSystem.get(conf);
+      Path file = new Path("test");
+      FSDataInputStream getIt fs.open(file);
+      BufferedReader d = new BufferedReader(new InputstreamReader(getIt));
+      String content = d.readLine(); //读取文件一行
+      System.out.println(content);
+      d.close();//关闭文件
+      fs.close();//关闭hdfs 
+    }
+    catch (Exception e) {
+       e.printstackTrace();
+    } 
+  }
+}
