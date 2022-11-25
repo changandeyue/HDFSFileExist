@@ -7,7 +7,7 @@ public class Chapter3 {
     try {
       String filename = "test";
       Configuration conf = new Configuration();
-      conf.set("fs.defaultFs","hdfs://localhost:9000");
+      conf.set("fs.defaultFS","hdfs://localhost:9000");
       conf.set("fs.hdfs.impl","org.apache.hadoop.hdfs.Dist ributedFileSystem");
       FileSystem fs = FileSystem.get(conf);
         if(fs.exists(new Path(filename))) {
